@@ -180,8 +180,6 @@ SysScout uses a `monitorConfig.json` file to persist settings across restarts. B
   }
 }
 ```
-
-- **GUILD_ID_X**: Replace with your actual guild (server) IDs.
 - **systemMonitoring**:
   - `channelId`: ID of the channel where system metrics are posted.
   - `intervalMs`: Monitoring interval in milliseconds.
