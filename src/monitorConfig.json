@@ -1,14 +1,1 @@
-{
-  "1227786471759675462": {
-    "systemMonitoring": {
-      "channelId": "1302714333775790100",
-      "intervalMs": 60000,
-      "selfEdit": true,
-      "lastMessageId": "1333116298737225738"
-    },
-    "connectivityMonitoring": {
-      "enabled": true,
-      "channelId": "1302714333775790100"
-    }
-  }
-}
+{}
