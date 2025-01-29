@@ -15,6 +15,10 @@ export function loadConfig(): Record<string, any> {
   return JSON.parse(fs.readFileSync(configPath, 'utf8'));
 }
 
+export function isConfigEmpty(config: Record<string, any>): boolean {
+return Object.keys(config).length === 0;
+}
+
 export function saveConfig(config: Record<string, any>) {
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
 }

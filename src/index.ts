@@ -1,6 +1,6 @@
 import { Client, Collection, Events, GatewayIntentBits, REST, Routes } from 'discord.js';
 import { TOKEN, CLIENT_ID } from './config';
-import { restoreMonitoring } from './commands/startMonitor'; // Import restoreMonitoring
+import { restoreMonitoring, loadConfig,isConfigEmpty } from './commands/startMonitor';
 import { checkConnectivityEmbed } from './utils/checkConectivity';
 import fs from 'fs';
 import path from 'path';
@@ -49,8 +49,14 @@ client.once(Events.ClientReady, async (readyClient) => {
 
   // Restore monitoring for all saved configurations
   try {
+    let config = loadConfig()
+    if (!isConfigEmpty(config)) {
     await restoreMonitoring(client);
     console.log('Restored monitoring for all saved configurations.');
+    }
+    else {
+      console.log('No configurations found.')
+    }
   } catch (error) {
     console.error('Error restoring monitoring:', error);
   }
